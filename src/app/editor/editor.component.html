@@ -1,0 +1,43 @@
+<div id="toolbar">
+    <button (click)="undoEdit()" md-icon-button>
+        <md-icon class="md-24">undo</md-icon>
+    </button>
+    <button (click)="redoEdit()" md-icon-button>
+        <md-icon class="md-24">redo</md-icon>
+    </button>
+    <button (click)="clear()" md-icon-button>
+        <md-icon class="md-24">delete</md-icon>
+    </button>
+    <button (click)="openModal()" id="saveButton" md-icon-button>
+        <md-icon class="md-24">save</md-icon>
+    </button>
+    <button (click)="openSettings()" id="modeButton" md-icon-button>
+        <md-icon class="md-24">settings</md-icon>
+    </button>
+</div>
+<textarea #codeEditor></textarea>
+
+<button (click)="openFile()" id="openFile" md-fab>
+    <md-icon class="md-24">add</md-icon>
+</button>
+
+<dialog #saveModal id="saveModal">
+    <h3>File Name</h3>
+    <input id="fileNameInput" type="text" #fileName placeholder="cool.ts">
+    <div id="buttonDiv">
+        <button (click)="closeModal()" id="exit" color="warn" md-button>EXIT</button>
+        <button id="save" (click)="save(fileName.value)" color="primary" md-button>SAVE</button>
+    </div>
+</dialog>
+
+<dialog #modeModal id="modeModal">
+    <h3>Editor language mode</h3>
+    <select (change)="getMode($event.target.value)">
+        <option value="text/typescript">Typescript</option>
+        <option value="go">Go</option>
+        <option value="python">Python</option>
+    </select>
+    <div id="buttonDiv">
+        <button (click)="closeModeModal()" id="exit" color="warn" md-button>EXIT</button>
+    </div>
+</dialog>

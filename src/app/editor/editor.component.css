@@ -1,0 +1,48 @@
+#toolbar {
+    background-color: #00675d;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    padding-left: 2rem;
+}
+
+#saveButton {
+    position: absolute;
+    right: 6%;
+}
+
+#openFile {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+dialog {
+    width: 15rem;
+    height: 10rem;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#buttonDiv {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+#exit {
+    margin-right: -2rem;
+}
+
+#modeButton {
+    position: absolute;
+    right: 16px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
